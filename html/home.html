@@ -39,4 +39,20 @@
     </section>
 </div>
 
-<script></script>
+<script>
+    $(".go-to-album").click(function (e) {
+        e.preventDefault();
+        $("#clear").remove();
+        // $("#clear") = null;
+
+        var album = $(this).attr('album');
+        var artist = $(this).attr('artist');
+
+
+
+        $("#clear-content").load("ar-al/all-album.html?album=" + encodeURI(album) + "&artist=" + encodeURI(
+            artist));
+
+    });
+</script>
+<script src="js/music-player.js"></script>
