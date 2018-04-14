@@ -1,0 +1,29 @@
+<div id="clear">
+    <section id="album">
+        <div class="container">
+            <br>
+            <h1 class="display-4">
+                <a class="text-light" href="#">All Album</a>
+            </h1>
+            <div class="row">
+                <?php require "../php/music-and-album/show-all-album.php"; ?>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    $(".go-to-album").click(function (e) {
+        e.preventDefault();
+        $("#clear").remove();
+        // $("#clear") = null;
+
+        var album = $(this).attr('album');
+        var artist = $(this).attr('artist');
+       
+       
+
+        $("#clear-content").load("ar-al/all-album.html?album=" + encodeURI(album) + "&artist=" + encodeURI(artist));
+
+    });
+</script>

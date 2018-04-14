@@ -1,0 +1,103 @@
+<section id="audio-controller">
+
+    <div id="audio-playlist">
+        <audio controls id="audioPlayer">
+            Your browser cannot play music file!
+        </audio>
+        <ul>
+        </ul>
+    </div>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-bottom">
+        <div class="container">
+            <span class="navbar-text">Title:
+                <span class="navbar-text" id="audio-title"></span>
+            </span>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <div id="tracker">
+                        <div id="progressBar">
+                            <span id="progress"></span>
+                        </div>
+                        <span id="duration"></span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav" id="audio-control">
+                <li class="nav-item" id="">
+                    <a id="back" href="" class="nav-link">
+                        <i class="fas fa-step-backward"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a id="play" href="" class="nav-link">
+                        <i class="fas fa-play"></i>
+                    </a>
+                </li>
+                <li class="nav-item" id="">
+                    <a id="pause" href="" class="nav-link">
+                        <i class="fas fa-pause"></i>
+                    </a>
+                </li>
+                <li class="nav-item" id="">
+                    <a id="next" href="" class="nav-link">
+                        <i class="fas fa-step-forward"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</section>
+
+<style>
+    #audio-playlist{
+        display: none;
+    }
+</style>
+
+<script>
+    $("#play").click(function (e) {
+        e.preventDefault();
+        $("#audioPlayer")[0].play();
+    });
+    $("#pause").click(function (e) {
+        e.preventDefault();
+        $("#audioPlayer")[0].pause();
+    });
+    $("#back").click(function (e) {
+        e.preventDefault();
+        $("#audioPlayer")[0].pause();
+        currentsong--;
+        console.log(currentsong);
+
+        if (currentsong < 0) {
+            currentsong = $("#audio-playlist li a").length - 1;
+            $("#audioPlayer")[0].src = $("#audio-playlist li a")[currentsong].href;
+        } else {
+            $("#audioPlayer")[0].src = $("#audio-playlist li a")[currentsong].href;
+        }
+        $("#audioPlayer")[0].play();
+        var title = $("#audio-playlist li a:eq(" + currentsong + ")").text();
+        $("#audio-title").html(title);
+
+        console.log(title);
+
+    });
+    $("#next").click(function (e) {
+        e.preventDefault();
+        $("#audioPlayer")[0].pause();
+        currentsong++;
+        console.log(currentsong);
+
+        if (currentsong >= $("#audio-playlist li a").length) {
+            currentsong = 0;
+            $("#audioPlayer")[0].src = $("#audio-playlist li a")[currentsong].href;
+        } else {
+            $("#audioPlayer")[0].src = $("#audio-playlist li a")[currentsong].href;
+
+        }
+        $("#audioPlayer")[0].play();
+        var title = $("#audio-playlist li a:eq(" + currentsong + ")").text();
+        $("#audio-title").html(title);
+
+    });
+</script>
