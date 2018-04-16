@@ -6,6 +6,6 @@
     $_SESSION['message']="";
     $_SESSION['reg_sucesses']="";
     $_SESSION['passchange']="";
-
+    $_SESSION['msg']='';
     
 ?>

@@ -2,6 +2,7 @@
 
     require "encrypt-decrypt.php";
     $conn = new mysqli("localhost","root","","project");
+    
 
     // Show name in home page
     $get_first_name = $conn->query("SELECT firstname from encrypt_userinfo where email = '".$_SESSION['encrypt_email']."' ");
@@ -28,7 +29,7 @@
                 
         // Concatinate decrypted firstname and lastname
 
-        $name = $firstname . ' ' . $lastname;
+        $name = $firstname .' ' . $lastname;
 
         // Name of user
         $_SESSION['name']=$name;

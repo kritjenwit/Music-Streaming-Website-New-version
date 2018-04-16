@@ -16,7 +16,7 @@
         echo        "</a>";
         echo        "<div class='overlay'>";
         echo            "<div class='text'>";
-        echo                "<a class='go-to-album' href='ar-al/album.php?album=$album&artist=$artist' id='pic-song' album='$album' artist='$artist'>$album - $artist</a>";
+        echo                "<a class='go-to-album' href='ar-al/all-album.html?album=$album&artist=$artist' id='pic-song' album='$album' artist='$artist'>$album - $artist</a>";
         echo            "</div>";
         echo        "</div>";
         echo    "</div>";

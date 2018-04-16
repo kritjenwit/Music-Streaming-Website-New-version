@@ -12,7 +12,7 @@
         echo "<tr>";
         echo "<td>".'<img src="data:image/jpeg;base64,'.base64_encode($row['music_cover'] ).'" height="200" width="200" class="img-thumnail music-pic" >  '."</td>";
         echo "<td>"."<a class='music' music='$music_name' href='$url'> $music_name </a> <br>"."</td>";
-        echo "<td>"."<a class='artist' href='artist.php?artist=$artist'> $artist </a> <br>"."</td>";
+        echo "<td>"."<a class='artist' href='artist.php?artist=$artist' artist='$artist'> $artist </a> <br>"."</td>";
         echo "</tr>";
 
     }

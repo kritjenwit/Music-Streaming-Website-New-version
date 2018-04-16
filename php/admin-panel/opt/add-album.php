@@ -22,8 +22,8 @@
         $album_cover = addslashes(file_get_contents($_FILES['album_cover']['tmp_name']));
         $data = $conn->query("insert into album (album_id,album_name,artist,music_name,album_cover,album_file) values ('NULL','$album_name','$artist','$music_name','$album_cover','$url') ");
         if($data === true){
-           echo '<script>alert("Music insert to database");</script>';
-           header("Location: ../../../admin-panel/add-music.php");
+            $_SESSION['msg']='<div class="alert alert-success"><strong>Success!</strong> Add album into Website.</div>';
+            header("Location: ../../../admin-panel/add-music.php");
         }
     }
 

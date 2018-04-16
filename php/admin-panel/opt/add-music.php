@@ -21,6 +21,7 @@
         $music_cover = addslashes(file_get_contents($_FILES['music_cover']['tmp_name']));
         $data = $conn->query("insert into music (music_id,music_name,artist,music_cover,music_file) values ('NULL','$music_name','$artist','$music_cover','$url') ");
         if($data === true){
+           $_SESSION['msg']='<div class="alert alert-success"><strong>Success!</strong> Add music into Website.</div>';
            header("Location: ../../../admin-panel/add-music.php");
         }
     }
