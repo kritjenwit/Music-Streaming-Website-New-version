@@ -1,7 +1,7 @@
 <?php session_start(); 
 
 
-    require "encrypt-decrypt.php";
+    require "php/encrypt-decrypt.php";
     $conn = new mysqli("localhost","root","","project");
 
     $_SESSION["message"]="";

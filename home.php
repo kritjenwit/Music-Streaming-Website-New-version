@@ -17,10 +17,13 @@
     <!-- Font awsome -->
     <script src="dist/fontawesome-all.js"></script>
     <!-- beautifull scroll -->
-    <!-- Local JavaScript -->
+    
+    <!-- 
+        Local JavaScript 
+    -->
+
     <!-- load header and footer -->
     <script src="js/load-header-footer.js"></script>
-    <!-- index JavaScript -->
 
 
     <!-- CSS -->
@@ -29,14 +32,25 @@
     <link rel="stylesheet" href="dist/bootstrap.css">
     <!-- Local CSS -->
     <link rel="stylesheet" href="css/home.css">
+    <style>
+        body{
+            margin:70px;
+        }
+    </style>
 
-    <title>Neon | Welcome</title>
+    <title>Neon | Music Streaming Website</title>
 </head>
 
 <body>
     <header>
         
     </header>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-3 text-center">"Just <strong>CLICK</strong>  and <strong>Listen</strong>"</h1>
+        </div>
+    </div>
 
     <section id="sub-menu">
         <script>
@@ -45,17 +59,9 @@
     </section>
 
     <div id="clear-content">
-        <!-- <div class="home-page"></div>
-        <div class="music-page"></div>
-        <div class="album-page"></div>
-        <div class="album-body"></div> -->
-            <script>
-                // $(".home-page").load("html/home.html");
-                // $(".music-page").load("html/music.html");
-                // $(".album-page").load("html/album.html");
-                // $(".album-body").load("html/all-album.html");
-                $("#clear-content").load("html/home.html");
-            </script>
+        <script>
+            $("#clear-content").load("html/home.html");
+        </script>
     </div>
 
     <div id="audio">
@@ -67,6 +73,8 @@
     <footer>
         
     </footer>
+
+    
 
 
 </body>

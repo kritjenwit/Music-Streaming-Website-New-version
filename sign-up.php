@@ -7,7 +7,6 @@
     $_SESSION['message']="";
 
     if(isset($_POST["btnRegister"])){
-    
         
         // Original Data
 
@@ -74,7 +73,7 @@
     <!-- Local CSS -->
     <link rel="stylesheet" href="css/sign-up.css">
 
-    <title>Neon | Welcome</title>
+    <title>Neon | Sign up</title>
 </head>
 </head>
 

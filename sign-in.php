@@ -1,38 +1,27 @@
 <?php 
-    
+    // mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     session_start(); 
-
     require "php/encrypt-decrypt.php";
     $conn = new mysqli("localhost","root","","project");
-
     $_SESSION['error']= "";
-
     // This is used to keep the user logged in website //
-
     if((isset($_SESSION["email"])) && (isset($_SESSION["logged"]))){
         header("Location: home.php");
         exit();
     }
-
     // Press Sign in and do this operation //
-
     if(isset($_POST["sign-in"])){
-
         // function to prevent the SQL injection //
         // Original Data
         $email = $conn->real_escape_string($_POST["email"]);
         $password = $conn->real_escape_string($_POST["password"]);
-
         // Encrypt Data
-
         $encrypt_email = convert_string('e',$email);
         $encrypt_password = convert_string('e',$password);
-
         // Database part
         // Check data in database 
-        $data = $conn->query("SELECT * from encrypt_userinfo where email = '".$encrypt_email."' and password = '".$encrypt_password."' ");
-
-        if($data->num_rows > 0 ){
+        $data = $conn->query("SELECT * from encrypt_userinfo where email = '$encrypt_email' and password = '$encrypt_password' ");
+        if($data->num_rows ){
             $_SESSION["email"]=$email;
             $_SESSION["logged"]= "logged";
             
@@ -46,8 +35,6 @@
             $_SESSION['error']= "Invalid email or password. Please try again";
         }
     }
-
-
 
 ?>
 
@@ -80,7 +67,7 @@
     <!-- Local CSS -->
     <link rel="stylesheet" href="css/sign-in.css">
 
-    <title>Neon | Welcome</title>
+    <title>Neon | Sign in</title>
 </head>
 </head>
 
@@ -139,7 +126,7 @@
                         <div class="row">
                             <div class="col-lg-2"></div>
                             <div class="col-lg-8">
-                                <form action="" method="post" class="was-validated">
+                                <form action="sign-in.php" method="post" class="was-validated">
                                     <input class="form-control" type="text" name="email" id="email" placeholder="email" required pattern=".[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3}$"
                                         title="Please Enter format of email correctly">
                                     <br>

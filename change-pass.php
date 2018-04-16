@@ -1,6 +1,6 @@
 <?php session_start(); 
 
-    require "encrypt-decrypt.php";
+    require "php/encrypt-decrypt.php";
     $_SESSION['error']="";
 
     if(isset($_POST['btn-confirm'])){
