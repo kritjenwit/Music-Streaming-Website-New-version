@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-<head>
+
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -28,39 +28,40 @@
     <link rel="stylesheet" href="../dist/bootstrap.css">
     <!-- Local CSS -->
 
-    <title>Neon | Welcome</title>
+    <title>Neon | Add Music and Album</title>
 
 </head>
 
 
 
-    <style>
-        body {
-            height: 100%;
-        }
+<style>
+    body {
+        margin:
+        height: 100%;
+    }
 
-        .del-line a {
-            text-decoration: none;
-        }
+    .del-line a {
+        text-decoration: none;
+    }
 
-        section .card-body {
-            color: #333;
-            background-color: lightgray;
-        }
+    section .card-body {
+        color: #333;
+        background-color: lightgray;
+    }
 
-        #del-music,
-        #del-al {
-            top: 15vh;
-        }
+    #del-music,
+    #del-al {
+        top: 15vh;
+    }
 
-        footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
 
-</head>
+
 
 <body>
 
@@ -95,7 +96,7 @@
 
             <ul class="nav justify-content-center nav-pills p-3 bg-secondary">
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="dashboard.php?user-page=1">Dashboard</a>
+                    <a class="nav-link text-light" href="dashboard.php?user-table=1&music-table=1&album-table=1">Dashboard</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-light" href="#" id="navbardrop" data-toggle="dropdown">Table</a>
@@ -117,7 +118,7 @@
             <div class="container pt-5">
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a href="dashboard.php">Dashboard</a>
+                    <a href="dashboard.php?user-table=1&music-table=1&album-table=1">Dashboard</a>
                     </li>
                     <li class="breadcrumb-item active">
                         Add music and album
@@ -157,6 +158,9 @@
             </div>
         </section>
 
+        <div class="result">
+            <?php echo $_SESSION['msg']; ?>
+        </div>
 
 
         <!-- Add music mondal -->

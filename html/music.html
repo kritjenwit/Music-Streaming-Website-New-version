@@ -3,7 +3,7 @@
         <div class="container">
             <br>
             <h1 class="display-4">
-                <a class="text-light" href="">All Music</a>
+                <a class="text-light" href="#">All Music</a>
             </h1>
             <br>
             <div class="row">
@@ -25,3 +25,17 @@
 </div>
 
 <script src="js/music-player.js"></script>
+<script>
+    $(".artist").click(function (e) {
+        e.preventDefault();
+        $("#clear").remove();
+        // $("#clear") = null;
+
+        var artist = $(this).attr('artist');
+
+
+
+        $("#clear-content").load("ar-al/artist.html?artist=" + encodeURI(artist));
+
+    });
+</script>

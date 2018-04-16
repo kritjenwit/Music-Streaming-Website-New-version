@@ -31,6 +31,7 @@ function play() {
         var title = $(this).text();
         $("#audio-title").html(title);
     });
+    
 
 
 }

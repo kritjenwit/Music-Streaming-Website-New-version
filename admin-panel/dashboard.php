@@ -28,7 +28,7 @@
     <!-- Local CSS -->
     
 
-    <title>Neon | Welcome</title>
+    <title>Neon | Dashboard</title>
 </head>
 
 <style>

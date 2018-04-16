@@ -24,7 +24,7 @@
                         </span>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="profile.php">
+                        <a class="nav-link" href="profile/profile.php">
                             <i class="fas fa-user"></i>Profile</a>
                     </li>
                     <li class="nav-item">

@@ -27,17 +27,12 @@
     <!-- Local CSS -->
 
 
-    <title>Neon | Welcome</title>
+    <title>Neon | Delete Music and Album</title>
 </head>
 
 <style>
-    #dashboard a {
-        text-decoration: none;
-    }
-
-    #dashboard .card-body {
-        color: #333;
-        background-color: lightgray;
+    body {
+        height: 100%;
     }
 
     .del-line a {
@@ -49,8 +44,8 @@
         background-color: lightgray;
     }
 
-    #add-music,
-    #add-al {
+    #del-music,
+    #del-al {
         top: 15vh;
     }
 
@@ -110,8 +105,11 @@
 
     <div class="container pt-5">
         <ul class="breadcrumb">
+            <li class="breadcrumb-item ">
+                <a href="dashboard.php?user-table=1&music-table=1&album-table=1">Dashboard</a>
+            </li>
             <li class="breadcrumb-item active">
-                Dashboard
+                Delete music and album
             </li>
 
         </ul>
@@ -120,7 +118,7 @@
     <!-- 
         TODO HERE 
     -->
-    <section>
+    <section class="mt-5 text-center">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6  del-line">
@@ -144,6 +142,8 @@
             </div>
         </div>
     </section>
+
+    
 
     <!-- Add music mondal -->
     <div class="modal fade" id="del-music">
